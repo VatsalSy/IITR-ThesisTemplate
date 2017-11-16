@@ -1,0 +1,92 @@
+\newgeometry{left=2.1cm,right=2cm,top=2cm,bottom=2cm}
+\renewcommand{\baselinestretch}{1.5}
+ \setlength{\parindent}{0pt}
+
+\textheight = 630pt \topmargin=0pt \voffset=1cm \headheight = 0pt
+\marginparwidth= 0pt \headsep = 0pt
+
+\thispagestyle{empty}
+{
+\fontfamily{ptm}
+\begin{figure}[htb]
+\begin{minipage}{0.12\textwidth}
+\includegraphics[width=1in]{formalities/logo.jpg}
+\end{minipage}%
+\begin{minipage}[t]{0.88\textwidth}
+\begin{center}
+\begingroup
+    \fontsize{16pt}{12pt}\fontfamily{ptm} \selectfont
+    \bfseries
+INDIAN INSTITUTE OF TECHNOLOGY ROORKEE\\
+\endgroup
+\end{center}
+\end{minipage}
+\end{figure}
+
+\begin{center}
+\begingroup
+    \fontsize{14pt}{12pt}\fontfamily{ptm} \selectfont
+\quad \quad \quad \quad \quad  \textbf{\underline{{CANDIDATE'S DECLARATION}}}
+\endgroup
+\end{center}
+}
+\vspace{0.5cm}
+
+%\begin{minipage}
+
+I hereby certify that the work which is being presented in the report entitled {\bf\enquote{UNDERSTANDING OF MUTUAL INTERACTIONS BETWEEN LIQUID JETS: ENTRAINMENT AND SHEET FORMATION}} in partial fulfillment of the requirements for the award of the degree of \enquote{Master of Technology} and submitted in the Department of Mechanical and Industrial Engineering of the Indian Institute of Technology Roorkee, Roorkee is an  authentic record of my own work carried out during the period from July, 2013 to August, 2016 under the supervision of Dr. Durga Toshniwal, Associate Professor, Department of Computer Science and Engineering, Indian Institute of Technology Roorkee, Roorkee.
+\vspace{.05cm}
+
+~~~~~The matter presented in this thesis has not been submitted by
+me for the award of any other degree of this or any other
+Institute.\vspace{1.5cm}
+\begin{flushright}
+\textbf{(CHANDRESH KUMAR MAURYA)}
+\end{flushright} 
+\vspace{-0.1cm}
+~~~~~~This is to certify that the above statement made by the
+candidate is correct to the best of my knowledge. \vspace{.3cm}
+\vspace{2cm}
+
+% \hfill (DURGA TOSHNIWAL)
+\begin{flushright} (DURGA TOSHNIWAL)\\\vspace{-1.5ex}Supervisor \end{flushright}
+
+
+{\bf Date}: 
+%\quad \quad \quad \quad (\large M. V. Kartikeyan) \quad \quad
+%\quad \quad \quad \quad \quad \quad \quad \quad \quad (\large
+%Ankush Mittal)  \quad \quad \quad \quad (\large Supervisor) \quad
+%\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad
+%(\large
+%Supervisor) \vspace{0.2cm} \\
+%\vspace{2.5cm} \\
+%---------------------------
+\renewcommand{\baselinestretch}{1.5}
+\vspace{-0.5cm}
+
+
+%~~~~The Ph.D. Viva--Voce Examination of \textbf{Mr. Shitala \
+%Prasad}, Research Scholar has been held on
+%...........................................}
+%\end{minipage}
+
+\vspace{0.8cm}
+
+%%\begin{minipage}[b]{0.5\textwidth}
+%\begin{tabular}{cc}
+%
+%\quad {\large (Signature of Supervisors)} & \quad \quad \quad \quad \quad {\large (Signature of External Examiner)} \\
+%
+%\end{tabular}
+
+
+%\begin{flushleft}
+%Signature of Supervisors
+%\end{flushleft}
+%%\end{minipage}%
+%%\begin{minipage}[b]{0.45\textwidth}
+%\begin{flushright}
+%\quad Signature of External Examiner
+%\end{flushright}
+%\end{minipage}
+%\end{figure}

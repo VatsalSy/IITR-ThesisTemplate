@@ -1,0 +1,97 @@
+\documentclass[11pt,oneside,english,singlespacing,headsepline]{MastersDoctoralThesis}
+\include{style}
+\usepackage{etoolbox}
+\apptocmd{\thebibliography}{\csname phantomsection\endcsname\addcontentsline{toc}{chapter}{\bibname}}{}{}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[url=false,
+backend=bibtex,
+style=authoryear-comp,
+doi=true,  
+isbn=true,
+backref=false,
+dashed=false,
+maxcitenames=2,
+maxbibnames=99,
+natbib=true]{biblatex}
+
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+  
+\addbibresource{reference.bib}
+\addbibresource{referenceSelf.bib}
+
+\DeclareNameAlias{author}{last-first}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thesistitle{UNDERSTANDING OF MUTUAL INTERACTIONS BETWEEN LIQUID JETS: ENTRAINMENT AND SHEET FORMATION} %\ttitle
+\supervisor{Dr. ARUP KUMAR DAS} %\supname
+\examiner{} %\examname
+\IDDdegree{MASTER OF TECHNOLOGY} %\degreename
+\author{VATSAL SANJAY} %\authorname
+\addresses{} %\addressname
+\subject{} %\subjectname
+\keywords{} %\keywordnames
+\university{{INDIAN INSTITUTE OF TECHNOLOGY ROORKEE}} %\univname
+\department{{DEPARTMENT OF MECHANICAL AND INDUSTRIAL ENGINEERING}} %\deptname
+\group{\href{}{}} %\groupname
+\faculty{{}{}} %\facname
+
+\AtBeginDocument{
+\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+}
+
+\begin{document}  
+\newcommand{\MarkerCircleRed}{\raisebox{0.5pt}{\tikz{\node[draw,scale=0.4,circle,fill=red!100!red](){};}}}
+\newcommand{\MarkerSquareRed}{\raisebox{0.5pt}{\tikz{\node[draw,scale=0.4,regular polygon, regular polygon sides=4,fill=black!20!red](){};}}}
+\newcommand{\MarkerDiamondBlack}{\raisebox{0pt}{\tikz{\node[draw,scale=0.4,diamond,fill=black!100!](){};}}}
+\newcommand{\MarkerSquareEmpty}{\raisebox{0pt}{\tikz{\node[draw,scale=0.4,regular polygon, regular polygon sides=4](){};}}}
+\newcommand{\MarkerCircleEmpty}{\raisebox{0pt}{\tikz{\node[draw,scale=0.4,circle](){};}}}
+  
+\frontmatter 
+\pagestyle{plain}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\newgeometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm}
+\include{formalities/front_page}
+%----------------------------------------------------------------------------------------
+%	DECLARATION PAGE
+%----------------------------------------------------------------------------------------
+\include{formalities/declaration}
+%\newgeometry{top=2.5cm,bottom=2.5cm,left=3.5cm,right=1.5cm}
+\include{formalities/Abstract}
+\include{formalities/Content}
+%\clearpage
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+\include{chapters/Introduction}
+\include{chapters/NumericalFramework}
+\include{chapters/CollisionOfJets}
+\include{chapters/Conclusion}
+%\appendix
+%\include{Appendix}
+\addcontentsline{toc}{chapter}{Achievements till date}
+\nocite{*}
+\printbibliography[keyword=self1,title=\textbf{ACHIEVEMENTS TILL DATE}]
+\vspace{-8mm}
+\printbibliography[keyword=self2,heading=none]
+\vspace{-8mm}
+\printbibliography[keyword=self3,heading=none]
+\vspace{-8mm}
+\printbibliography[keyword=self4,heading=none]
+\vspace{-8mm}
+\printbibliography[keyword=self5,heading=none]
+\vspace{-8mm}
+\printbibliography[keyword=self6,heading=none]
+\vspace{-8mm}
+\printbibliography[keyword=self7,heading=none]
+\vspace{-8mm}
+\printbibliography[keyword=self8,heading=none]
+\cleardoublepage
+\addcontentsline{toc}{chapter}{References}
+\printbibliography[keyword=Notself,title=\textbf{REFERENCES}]
+\end{document}

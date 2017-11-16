@@ -1,0 +1,1265 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\preamble{%
+\providecommand{\noopsort}[1]{}\providecommand{\singleletter}[1]{#1}%\providecommand{\noopsort}[1]{}\providecommand{\singleletter}[1]{#1}%
+}
+
+\entry{aggarwal2016generation}{inproceedings}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Aggarwal}{A.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {\textbf{Sanjay, V}}{t.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kumar}{K.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Das}{D.}%
+     {A.~K.}{A.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{self7}
+  \strng{namehash}{AA+1}
+  \strng{fullhash}{AAtKPDAK1}
+  \field{labelyear}{2016}
+  \field{sortinit}{A}
+  \field{booktitle}{Paper ID: 267, Proceedings of CHEMCON}
+  \field{title}{Generation of a liquid sheet by an oblique impingement of
+  interacting jets: a numerical investigation}
+  \field{year}{2016}
+\endentry
+
+\entry{bell1989second}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Bell}{B.}%
+     {J.~B.}{J.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Colella}{C.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Glaz}{G.}%
+     {H.~M.}{H.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{BJB+1}
+  \strng{fullhash}{BJBCPGHM1}
+  \field{labelyear}{1989}
+  \field{sortinit}{B}
+  \field{number}{2}
+  \field{pages}{257\bibrangedash 283}
+  \field{title}{A second-order projection method for the incompressible
+  Navier-Stokes equations}
+  \field{volume}{85}
+  \field{journaltitle}{Journal of Computational Physics}
+  \field{year}{1989}
+\endentry
+
+\entry{bremond2006atomization}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Bremond}{B.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Villermaux}{V.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Cambridge Univ Press}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{BNVE1}
+  \strng{fullhash}{BNVE1}
+  \field{labelyear}{2006}
+  \field{sortinit}{B}
+  \field{pages}{273\bibrangedash 306}
+  \field{title}{Atomization by jet impact}
+  \field{volume}{549}
+  \field{journaltitle}{Journal of Fluid Mechanics}
+  \field{year}{2006}
+\endentry
+
+\entry{bush2004collision}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Bush}{B.}%
+     {J.~W.~M.}{J.~W.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hasha}{H.}%
+     {A.~E.}{A.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Cambridge Univ Press}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{BJWMHAE1}
+  \strng{fullhash}{BJWMHAE1}
+  \field{labelyear}{2004}
+  \field{sortinit}{B}
+  \field{pages}{285\bibrangedash 310}
+  \field{title}{On the collision of laminar jets: fluid chains and fishbones}
+  \field{volume}{511}
+  \field{journaltitle}{Journal of Fluid Mechanics}
+  \field{year}{2004}
+\endentry
+
+\entry{chen2013high}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Chen}{C.}%
+     {X.}{X.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ma}{M.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yang}{Y.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Popinet}{P.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Begel House Inc.}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{CX+1}
+  \strng{fullhash}{CXMDYVPS1}
+  \field{labelyear}{2013}
+  \field{sortinit}{C}
+  \field{number}{12}
+  \field{title}{High-fidelity simulations of impinging jet atomization}
+  \field{volume}{23}
+  \field{journaltitle}{Atomization and Sprays}
+  \field{year}{2013}
+\endentry
+
+\entry{choo2001parametric}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Choo}{C.}%
+     {Y.~J.}{Y.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kang}{K.}%
+     {B.~S.}{B.~S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{CYJKBS1}
+  \strng{fullhash}{CYJKBS1}
+  \field{labelyear}{2001}
+  \field{sortinit}{C}
+  \field{number}{1}
+  \field{pages}{56\bibrangedash 62}
+  \field{title}{Parametric study on impinging-jet liquid sheet thickness
+  distribution using an interferometric method}
+  \field{volume}{31}
+  \field{journaltitle}{Experiments in Fluids}
+  \field{year}{2001}
+\endentry
+
+\entry{choo2002velocity}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Choo}{C.}%
+     {Y.~J.}{Y.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kang}{K.}%
+     {B.~S.}{B.~S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {AIP}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{CYJKBS1}
+  \strng{fullhash}{CYJKBS1}
+  \field{labelyear}{2002}
+  \field{sortinit}{C}
+  \field{number}{2}
+  \field{pages}{622\bibrangedash 627}
+  \field{title}{The velocity distribution of the liquid sheet formed by two
+  low-speed impinging jets}
+  \field{volume}{14}
+  \field{journaltitle}{Physics of Fluids}
+  \field{year}{2002}
+\endentry
+
+\entry{choo2007effect}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Choo}{C.}%
+     {Y.~J.}{Y.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kang}{K.}%
+     {B.~S.}{B.~S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {AIP}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{CYJKBS1}
+  \strng{fullhash}{CYJKBS1}
+  \field{labelyear}{2007}
+  \field{sortinit}{C}
+  \field{number}{11}
+  \field{pages}{112101}
+  \field{title}{The effect of jet velocity profile on the characteristics of
+  thickness and velocity of the liquid sheet formed by two impinging jets}
+  \field{volume}{19}
+  \field{journaltitle}{Physics of Fluids}
+  \field{year}{2007}
+\endentry
+
+\entry{Chorin1968}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Chorin}{C.}%
+     {A.~J.}{A.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{CAJ1}
+  \strng{fullhash}{CAJ1}
+  \field{labelyear}{1968}
+  \field{sortinit}{C}
+  \field{number}{104}
+  \field{pages}{745\bibrangedash 762}
+  \field{title}{Numerical solution of the Navier-Stokes equations}
+  \field{volume}{22}
+  \field{journaltitle}{Mathematics of Computation}
+  \field{year}{1968}
+\endentry
+
+\entry{clanet2002life}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Clanet}{C.}%
+     {Christophe}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Villermaux}{V.}%
+     {Emmanuel}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Cambridge University Press}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{CCVE1}
+  \strng{fullhash}{CCVE1}
+  \field{labelyear}{2002}
+  \field{sortinit}{C}
+  \field{pages}{307\bibrangedash 340}
+  \field{title}{Life of a smooth liquid sheet}
+  \field{volume}{462}
+  \field{journaltitle}{Journal of fluid mechanics}
+  \field{year}{2002}
+\endentry
+
+\entry{da2016surface}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Da}{D.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hahn}{H.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Batty}{B.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wojtan}{W.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Grinspun}{G.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{DF+1}
+  \strng{fullhash}{DFHDBCWCGE1}
+  \field{labelyear}{2016}
+  \field{sortinit}{D}
+  \field{number}{4}
+  \field{pages}{78}
+  \field{title}{Surface-only liquids}
+  \field{volume}{35}
+  \field{journaltitle}{ACM Transactions on Graphics (TOG)}
+  \field{year}{2016}
+\endentry
+
+\entry{da1954notebooks}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Da~Vinci}{D.~V.}%
+     {Leonardo}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{DVL1}
+  \strng{fullhash}{DVL1}
+  \field{labelyear}{1508}
+  \field{sortinit}{D}
+  \field{pages}{756}
+  \field{title}{The Notebooks of Leonardo da Vinci}
+  \field{journaltitle}{Trans: E MacCurdy, (New York: George Brazillier)}
+  \field{year}{1508}
+\endentry
+
+\entry{eggers2008physics}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Eggers}{E.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Villermaux}{V.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {IOP Publishing}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{EJVE1}
+  \strng{fullhash}{EJVE1}
+  \field{labelyear}{2008}
+  \field{sortinit}{E}
+  \field{number}{3}
+  \field{pages}{036601}
+  \field{title}{Physics of liquid jets}
+  \field{volume}{71}
+  \field{journaltitle}{Reports on Progress in Physics}
+  \field{year}{2008}
+\endentry
+
+\entry{ekimova2015liquid}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Ekimova}{E.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Quevedo}{Q.}%
+     {W.}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Faubel}{F.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wernet}{W.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Nibbering}{N.}%
+     {E.~T.~J.}{E.~T.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACA}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{EM+1}
+  \strng{fullhash}{EMQWFMWPNETJ1}
+  \field{labelyear}{2015}
+  \field{sortinit}{E}
+  \field{number}{5}
+  \field{pages}{054301}
+  \field{title}{A liquid flatjet system for solution phase soft-x-ray
+  spectroscopy}
+  \field{volume}{2}
+  \field{journaltitle}{Structural Dynamics}
+  \field{year}{2015}
+\endentry
+
+\entry{erni2013free}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Erni}{E.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Elabbadi}{E.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACS Publications}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{EPEA1}
+  \strng{fullhash}{EPEA1}
+  \field{labelyear}{2013}
+  \field{sortinit}{E}
+  \field{number}{25}
+  \field{pages}{7812\bibrangedash 7824}
+  \field{title}{Free impinging jet microreactors: controlling reactive flows
+  via surface tension and fluid viscoelasticity}
+  \field{volume}{29}
+  \field{journaltitle}{Langmuir}
+  \field{year}{2013}
+\endentry
+
+\entry{hasson1964thickness}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Hasson}{H.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Peck}{P.}%
+     {R.~E.}{R.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Wiley Online Library}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{HDPRE1}
+  \strng{fullhash}{HDPRE1}
+  \field{labelyear}{1964}
+  \field{sortinit}{H}
+  \field{number}{5}
+  \field{pages}{752\bibrangedash 754}
+  \field{title}{Thickness distribution in a sheet formed by impinging jets}
+  \field{volume}{10}
+  \field{journaltitle}{AIChE Journal}
+  \field{year}{1964}
+\endentry
+
+\entry{ibrahim1991impinging}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Ibrahim}{I.}%
+     {E.~A.}{E.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Przekwas}{P.}%
+     {A.~J.}{A.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {AIP}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{IEAPAJ1}
+  \strng{fullhash}{IEAPAJ1}
+  \field{labelyear}{1991}
+  \field{sortinit}{I}
+  \field{number}{12}
+  \field{pages}{2981\bibrangedash 2987}
+  \field{title}{Impinging jets atomization}
+  \field{volume}{3}
+  \field{journaltitle}{Physics of Fluids A: Fluid Dynamics}
+  \field{year}{1991}
+\endentry
+
+\entry{inamura2014effect}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Inamura}{I.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Shirota}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{ITSM1}
+  \strng{fullhash}{ITSM1}
+  \field{labelyear}{2014}
+  \field{sortinit}{I}
+  \field{pages}{149\bibrangedash 160}
+  \field{title}{Effect of velocity profile of impinging jets on sheet
+  characteristics formed by impingement of two round liquid jets}
+  \field{volume}{60}
+  \field{journaltitle}{International Journal of Multiphase Flow}
+  \field{year}{2014}
+\endentry
+
+\entry{inoue2008study}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Inoue}{I.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Watanabe}{W.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Himeno}{H.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{IC+1}
+  \strng{fullhash}{ICWTHT1}
+  \field{labelyear}{2008}
+  \field{sortinit}{I}
+  \field{booktitle}{44th AIAA/ASME/SAE/ASEE Joint Propulsion Conference \&
+  Exhibit}
+  \field{pages}{4847}
+  \field{title}{Study on atomization process of liquid sheet formed by
+  impinging jets}
+  \field{year}{2008}
+\endentry
+
+\entry{inoue2009liquid}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Inoue}{I.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Watanabe}{W.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Himeno}{H.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{IC+1}
+  \strng{fullhash}{ICWTHT1}
+  \field{labelyear}{2009}
+  \field{sortinit}{I}
+  \field{booktitle}{45th AIAA/ASME/SAE/ASEE Joint Propulsion Conference \&
+  Exhibit}
+  \field{pages}{5041}
+  \field{title}{Liquid sheet dynamics and primary breakup characteristics at
+  impingement type injector}
+  \field{year}{2009}
+\endentry
+
+\entry{abhinav2017a}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Jain}{J.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {\textbf{Sanjay, V}}{t.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Das}{D.}%
+     {A.~K.}{A.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{self4}
+  \strng{namehash}{JA+1}
+  \strng{fullhash}{JAtDAK1}
+  \field{labelyear}{2017}
+  \field{extrayear}{1}
+  \field{sortinit}{J}
+  \field{booktitle}{Paper ID: IHMTC2017-13-0828; 24th National and 2nd
+  International ISHMT-ASTFE Heat and Mass Transfer Conference}
+  \field{title}{Asymmetry in air entrainment inside liquid pool due to
+  impingement of an inclined jet}
+  \field{year}{2017}
+\endentry
+
+\entry{abhinav2017b}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Jain}{J.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {\textbf{Sanjay, V}}{t.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Das}{D.}%
+     {A.~K.}{A.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{self5}
+  \strng{namehash}{JA+1}
+  \strng{fullhash}{JAtDAK1}
+  \field{labelyear}{2017}
+  \field{extrayear}{2}
+  \field{sortinit}{J}
+  \field{booktitle}{Paper ID: 68, 44th National Conference on Fluid Mechanics
+  and Fluid Power}
+  \field{title}{Interaction of bubble clusters formed due to adjacent
+  impingement of liquid jets in a pool}
+  \field{year}{2017}
+\endentry
+
+\entry{kumar2016physical}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Kumar}{K.}%
+     {Parmod}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Das}{D.}%
+     {Arup~Kumar}{A.~K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Mitra}{M.}%
+     {Sushanta~K}{S.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {AIP Publishing}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{KP+1}
+  \strng{fullhash}{KPDAKMSK1}
+  \field{labelyear}{2016}
+  \field{sortinit}{K}
+  \field{number}{7}
+  \field{pages}{072101}
+  \field{title}{Physical understanding of gas-liquid annular flow and its
+  transition to dispersed droplets}
+  \field{volume}{28}
+  \field{journaltitle}{Physics of Fluids}
+  \field{year}{2016}
+\endentry
+
+\entry{kumar2017air}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Kumar}{K.}%
+     {Parmod}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Das}{D.}%
+     {Arup~K}{A.~K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Mitra}{M.}%
+     {Sushanta~K}{S.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {AIP Publishing}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{KP+1}
+  \strng{fullhash}{KPDAKMSK2}
+  \field{labelyear}{2017}
+  \field{extrayear}{1}
+  \field{sortinit}{K}
+  \field{number}{10}
+  \field{pages}{102104}
+  \field{title}{Air entrainment driven by a converging rotational field in a
+  viscous liquid}
+  \field{volume}{29}
+  \field{journaltitle}{Physics of Fluids}
+  \field{year}{2017}
+\endentry
+
+\entry{kumar2017bending}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Kumar}{K.}%
+     {Parmod}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Das}{D.}%
+     {Arup~K}{A.~K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Mitra}{M.}%
+     {Sushanta~K}{S.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {AIP Publishing}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{KP+1}
+  \strng{fullhash}{KPDAKMSK2}
+  \field{labelyear}{2017}
+  \field{extrayear}{2}
+  \field{sortinit}{K}
+  \field{number}{2}
+  \field{pages}{022101}
+  \field{title}{Bending and growth of entrained air filament under converging
+  and asymmetric rotational fields}
+  \field{volume}{29}
+  \field{journaltitle}{Physics of Fluids}
+  \field{year}{2017}
+\endentry
+
+\entry{lhuissier2011destabilization}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Lhuissier}{L.}%
+     {Henri}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Villermaux}{V.}%
+     {Emmanuel}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {AIP}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{LHVE1}
+  \strng{fullhash}{LHVE1}
+  \field{labelyear}{2011}
+  \field{sortinit}{L}
+  \field{number}{9}
+  \field{pages}{091705}
+  \field{title}{The destabilization of an initially thick liquid sheet edge}
+  \field{volume}{23}
+  \field{journaltitle}{Physics of Fluids}
+  \field{year}{2011}
+\endentry
+
+\entry{ling2015multiscale}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Ling}{L.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zaleski}{Z.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Scardovelli}{S.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{LY+1}
+  \strng{fullhash}{LYZSSR1}
+  \field{labelyear}{2015}
+  \field{sortinit}{L}
+  \field{pages}{122\bibrangedash 143}
+  \field{title}{Multiscale simulation of atomization with small droplets
+  represented by a Lagrangian point-particle model}
+  \field{volume}{76}
+  \field{journaltitle}{International Journal of Multiphase Flow}
+  \field{year}{2015}
+\endentry
+
+\entry{Popinet2003}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Popinet}{P.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{PS1}
+  \strng{fullhash}{PS1}
+  \field{labelyear}{2003}
+  \field{sortinit}{P}
+  \field{number}{2}
+  \field{pages}{572\bibrangedash 600}
+  \field{title}{Gerris: a tree-based adaptive solver for the incompressible
+  Euler equations in complex geometries}
+  \field{volume}{190}
+  \field{journaltitle}{Journal of Computational Physics}
+  \field{year}{2003}
+\endentry
+
+\entry{popinet2009}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Popinet}{P.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{PS1}
+  \strng{fullhash}{PS1}
+  \field{labelyear}{2009}
+  \field{sortinit}{P}
+  \field{number}{16}
+  \field{pages}{5838\bibrangedash 5866}
+  \field{title}{An accurate adaptive solver for surface-tension-driven
+  interfacial flows}
+  \field{volume}{228}
+  \field{journaltitle}{Journal of Computational Physics}
+  \field{year}{2009}
+\endentry
+
+\entry{rayleigh1879capillary}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Rayleigh}{R.}%
+     {Lord}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{RL1}
+  \strng{fullhash}{RL1}
+  \field{labelyear}{1879}
+  \field{sortinit}{R}
+  \field{number}{196-199}
+  \field{pages}{71\bibrangedash 97}
+  \field{title}{On the capillary phenomena of jets}
+  \field{volume}{29}
+  \field{journaltitle}{Proceedings of the Royal Society of London}
+  \field{year}{1879}
+\endentry
+
+\entry{rayleigh1889tension}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Rayleigh}{R.}%
+     {Lord}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {The Royal Society}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{RL1}
+  \strng{fullhash}{RL1}
+  \field{labelyear}{1889}
+  \field{sortinit}{R}
+  \field{number}{286-291}
+  \field{pages}{281\bibrangedash 287}
+  \field{title}{On the tension of recently formed liquid surfaces}
+  \field{volume}{47}
+  \field{journaltitle}{Proceedings of the Royal Society of London}
+  \field{year}{1889}
+\endentry
+
+\entry{poulikakos1998thickness}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Shen}{S.}%
+     {Y.~B.}{Y.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Poulikakos}{P.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{SYBPD1}
+  \strng{fullhash}{SYBPD1}
+  \field{labelyear}{1998}
+  \field{sortinit}{S}
+  \field{number}{3}
+  \field{pages}{482\bibrangedash 487}
+  \field{title}{Thickness variation of a liquid sheet formed by two impinging
+  jets using holographic interferometry}
+  \field{volume}{120}
+  \field{journaltitle}{ASME Journal of Fluids Engineering}
+  \field{year}{1998}
+\endentry
+
+\entry{anurag2017b}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Soni}{S.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {\textbf{Sanjay, V}}{t.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Das}{D.}%
+     {A.~K.}{A.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{self3}
+  \strng{namehash}{SA+1}
+  \strng{fullhash}{SAtDAK1}
+  \field{labelyear}{2017}
+  \field{sortinit}{S}
+  \field{booktitle}{Paper ID: 64, 44th National Conference on Fluid Mechanics
+  and Fluid Power}
+  \field{title}{Consequences of interaction between asymmetric liquid jets}
+  \field{year}{2017}
+\endentry
+
+\entry{taylor1960formation}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Taylor}{T.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {The Royal Society}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{TG1}
+  \strng{fullhash}{TG1}
+  \field{labelyear}{1960}
+  \field{sortinit}{T}
+  \field{number}{1296}
+  \field{pages}{1\bibrangedash 17}
+  \field{title}{Formation of thin flat sheets of water}
+  \field{volume}{259}
+  \field{journaltitle}{Proceedings of the Royal Society of London A:
+  Mathematical, Physical and Engineering Sciences}
+  \field{year}{1960}
+\endentry
+
+\entry{sanjay2015bubble}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {\textbf{Sanjay, V}}{t.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Das}{D.}%
+     {A.~K.}{A.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{self8}
+  \strng{namehash}{tDAK2}
+  \strng{fullhash}{tDAK2}
+  \field{labelyear}{2015}
+  \field{sortinit}{T}
+  \field{booktitle}{ID FM-052, Proceedings of CHEMCON}
+  \field{title}{Bubble life cycle during entrainment by Jet impingment in
+  liquid pool}
+  \field{year}{2015}
+\endentry
+
+\entry{sanjay2016gas}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {\textbf{Sanjay, V}}{t.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Das}{D.}%
+     {A.~K.}{A.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{self6}
+  \strng{namehash}{tDAK2}
+  \strng{fullhash}{tDAK2}
+  \field{labelyear}{2016}
+  \field{sortinit}{T}
+  \field{booktitle}{Reference \#50, 9th International Conference on Multiphase
+  Flow}
+  \field{title}{On the gas-liquid entrainment by impingement of liquid jet onto
+  a pool}
+  \field{year}{2016}
+\endentry
+
+\entry{vatsal2k17}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {\textbf{Sanjay, V.}}{t.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Das}{D.}%
+     {A.~K.}{A.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{self1}
+  \strng{namehash}{tDAK1}
+  \strng{fullhash}{tDAK1}
+  \field{labelyear}{2017}
+  \field{sortinit}{T}
+  \verb{doi}
+  \verb 10.1063/1.4998288
+  \endverb
+  \field{number}{11}
+  \field{pages}{112101}
+  \field{title}{Formation of liquid chain by collision of two laminar jets}
+  \field{volume}{29}
+  \field{journaltitle}{Physics of Fluids, \textbf{Impact Factor = 2.232},}
+  \field{year}{2017}
+\endentry
+
+\entry{vatsal2017a}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {\textbf{Sanjay, V}}{t.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Das}{D.}%
+     {A.~K.}{A.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{self2}
+  \strng{namehash}{tDAK2}
+  \strng{fullhash}{tDAK2}
+  \field{labelyear}{2017}
+  \field{sortinit}{T}
+  \verb{doi}
+  \verb 10.1002/aic.15828
+  \endverb
+  \field{issn}{1547-5905}
+  \field{number}{11}
+  \field{pages}{5169\bibrangedash 5181}
+  \field{title}{On air entrainment in a water pool by impingement of a jet}
+  \verb{url}
+  \verb http://dx.doi.org/10.1002/aic.15828
+  \endverb
+  \field{volume}{63}
+  \field{journaltitle}{AIChE Journal, \textbf{Impact Factor = 2.836},}
+  \field{year}{2017}
+\endentry
+
+\entry{villermaux2002life}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Villermaux}{V.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Clanet}{C.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Cambridge Univ Press}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{VECC1}
+  \strng{fullhash}{VECC1}
+  \field{labelyear}{2002}
+  \field{sortinit}{V}
+  \field{pages}{341\bibrangedash 363}
+  \field{title}{Life of a flapping liquid sheet}
+  \field{volume}{462}
+  \field{journaltitle}{Journal of Fluid Mechanics}
+  \field{year}{2002}
+\endentry
+
+\entry{wadhwa2013noncoalescence}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Wadhwa}{W.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Vlachos}{V.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Jung}{J.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {APS}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{WN+1}
+  \strng{fullhash}{WNVPJS1}
+  \field{labelyear}{2013}
+  \field{sortinit}{W}
+  \field{number}{12}
+  \field{pages}{124502}
+  \field{title}{Noncoalescence in the oblique collision of fluid jets}
+  \field{volume}{110}
+  \field{journaltitle}{Physical review letters}
+  \field{year}{2013}
+\endentry
+
+\entry{yang2014liquid}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Yang}{Y.}%
+     {L.-J.}{L.-J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zhao}{Z.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Fu}{F.}%
+     {Q.-F.}{Q.-F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {K.-D.Cui}{K.-D.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{2}{%
+    {American Institute of Aeronautics}%
+    {Astronautics}%
+  }
+  \keyw{Notself}
+  \strng{namehash}{YLJ+1}
+  \strng{fullhash}{YLJZFFQFKD1}
+  \field{labelyear}{2014}
+  \field{sortinit}{Y}
+  \field{number}{4}
+  \field{pages}{1016\bibrangedash 1026}
+  \field{title}{Liquid sheet formed by impingement of two viscous jets}
+  \field{volume}{30}
+  \field{journaltitle}{Journal of Propulsion and Power}
+  \field{year}{2014}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

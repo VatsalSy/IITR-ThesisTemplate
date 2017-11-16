@@ -1,0 +1,35 @@
+\usepackage[top=2.5cm,bottom=2.5cm,left=3.5cm,right=1.5cm]{geometry}
+\usepackage[centertags]{amsmath}
+\usepackage{times} % sets times new roman font
+\usepackage{textcomp}
+\RequirePackage{booktabs} % Required for better table rules
+\RequirePackage{longtable} % Required for tables that span multiple pages (used in the symbols, abbreviations and physical constants pages)
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{csquotes}
+\usepackage{algpseudocode}
+\usepackage{tablefootnote}
+\usepackage{algorithmicx}
+\usepackage[ruled]{algorithm}
+\usepackage{url,hyperref}
+\usepackage{graphicx} 
+\usepackage{epstopdf}
+\usepackage{xcolor}
+\usepackage{caption,subfig}
+\usepackage{multirow}
+\usepackage[T1]{fontenc}
+\usepackage{longtable}
+\usepackage{bm} 
+\usepackage{adjustbox}
+\usepackage{blindtext}
+\usepackage[backend=bibtex,style=authoryear,natbib=true,maxbibnames=99,dashed=false]{biblatex} 
+\addbibresource{reference.bib}
+\renewcommand\bibname{References} % change bibliography to references
+\setlength{\parindent}{4em}
+\makeatletter
+\newcommand{\removelatexerror} % automatically center floats
+ {\let\@latex@error\@gobble}
+\makeatother
+\providecommand{\baseclass}{book}
+\RequirePackage{scrhack} % Loads fixes for various packages
