@@ -1,47 +1,23 @@
+\geometry{
+	paper=a4paper,
+	top=2.5cm, % Top margin
+	bottom=1.75cm, % Bottom margin
+	left=3.5cm, % left Margin -> binding allowance
+	right=1.5cm, % Right margin
+}
 \usepackage[T1]{fontenc} 
 \usepackage{times}
-\usepackage{matlab-prettifier}
-\usepackage[titletoc,toc,title]{appendix}
-\usepackage[autostyle=true]{csquotes}
-\usepackage{listings}
 \usepackage{xcolor}
 \usepackage{booktabs}
 \usepackage{makecell}
 \usepackage{multirow}
-\usepackage{nomencl}
 \usepackage{gensymb}
-\makenomenclature
 \usepackage{ifthen}
 \usepackage{lipsum}
-\renewcommand{\nomgroup}[1]{%
-	\item[\bfseries
-	\ifthenelse{\equal{#1}{K}}{Physics Constants}{%
-		\ifthenelse{\equal{#1}{P}}{Particle Parameters}{%
-			\ifthenelse{\equal{#1}{F}}{Fluid Parameters}{}}}%
-	]}
-\lstset { %
-	language=C++,
-	backgroundcolor=\color{black!5}, % set backgroundcolor
-	basicstyle=\tiny  ,% basic font setting
-	frame=single,
-	breaklines=true,
-	postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
-}
-
-\geometry{
-	paper=a4paper, % Change to letterpaper for US letter
-	inner=2.5cm, % Inner margin
-	outer=3.8cm, % Outer margin
-	bindingoffset=.5cm, % Binding offset
-	top=1.5cm, % Top margin
-	bottom=1.5cm, % Bottom margin
-	%showframe, % Uncomment to show how the type block is set on the page
-}
 \usepackage{longtable}
-
 \setlength{\parindent}{4em}
 \makeatletter
-\newcommand{\removelatexerror} % automatically center floats
+\newcommand{\removelatexerror}
  {\let\@latex@error\@gobble}
 \makeatother
 \usepackage{amsmath}
@@ -49,3 +25,7 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes}
 \usepackage{colortbl}
+\RequirePackage{graphicx} % Required to include images
+\RequirePackage{caption} % Required for customising the captions
+\captionsetup{justification=centerlast,font=normal,labelfont=sc}
+\usepackage{csquotes}

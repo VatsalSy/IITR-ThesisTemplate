@@ -1,4 +1,4 @@
-\documentclass[11pt,oneside,english,singlespacing,headsepline]{MastersDoctoralThesis}
+\documentclass[12pt,oneside,english,onehalfspacing,headsepline]{MastersDoctoralThesis}
 \include{style}
 \usepackage{etoolbox}
 \apptocmd{\thebibliography}{\csname phantomsection\endcsname\addcontentsline{toc}{chapter}{\bibname}}{}{}
@@ -53,19 +53,40 @@ natbib=true]{biblatex}
 \frontmatter 
 \pagestyle{plain}
 %----------------------------------------------------------------------------------------
+%	COVER PAGE
+%----------------------------------------------------------------------------------------
+\newgeometry{left=3.0cm,right=1.5cm,top=2.5cm,bottom=2.5cm}
+\include{formalities/cover_page}
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
-\newgeometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm}
+\newgeometry{left=3.0cm,right=1.5cm,top=2.5cm,bottom=2.5cm}
 \include{formalities/front_page}
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+\newgeometry{left=3.0cm,right=1.5cm,top=2.5cm,bottom=2.5cm}
+\include{formalities/Copyright}
+%----------------------------------------------------------------------------------------
+%	DEDICATION PAGE
+%----------------------------------------------------------------------------------------
+\newgeometry{left=3.0cm,right=1.5cm,top=2.5cm,bottom=2.5cm}
+\include{formalities/Dedication}
 %----------------------------------------------------------------------------------------
 %	DECLARATION PAGE
 %----------------------------------------------------------------------------------------
+\newgeometry{left=3.0cm,right=1.5cm,top=2.5cm,bottom=2.5cm}
 \include{formalities/declaration}
-%\newgeometry{top=2.5cm,bottom=2.5cm,left=3.5cm,right=1.5cm}
+%----------------------------------------------------------------------------------------
+%	DECLARATION PAGE
+%----------------------------------------------------------------------------------------
+\newgeometry{left=3.0cm,right=1.5cm,top=2.5cm,bottom=2.5cm}
+\include{formalities/acknowledgement}
+\newgeometry{left=3.5cm,right=1.5cm,top=2.5cm,bottom=2.5cm}
 \include{formalities/Abstract}
 \include{formalities/Content}
-%\clearpage
-
+\end{document}
 \mainmatter % Begin numeric (1,2,3...) page numbering
 \pagestyle{thesis} % Return the page headers back to the "thesis" style
 \include{chapters/Introduction}

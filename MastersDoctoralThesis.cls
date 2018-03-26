@@ -162,25 +162,11 @@
 %----------------------------------------------------------------------------------------
 
 \RequirePackage{babel} % Required for automatically changing names of document elements to languages besides english
-
 \RequirePackage{scrbase} % Required for handling language-dependent names of sections/document elements
-
 \RequirePackage{scrhack} % Loads fixes for various packages
-
 \RequirePackage{setspace} % Required for changing line spacing
-
 \RequirePackage{longtable} % Required for tables that span multiple pages (used in the symbols, abbreviations and physical constants pages)
-
 \RequirePackage{siunitx} % Required for \SI commands
-
-\RequirePackage{graphicx} % Required to include images
-\graphicspath{{Figures/}{./}} % Specifies where to look for included images
-
-\RequirePackage{booktabs} % Required for better table rules
-
-\RequirePackage{caption} % Required for customising the captions
-\captionsetup{justification=centerlast,font=normal,labelfont=sc}
-
 %----------------------------------------------------------------------------------------
 %	DEFINE CUSTOM THESIS INFORMATION COMMANDS
 %----------------------------------------------------------------------------------------
@@ -295,23 +281,6 @@ KOMA-script documentation for details.}]{fancyhdr}
 }
 
 %----------------------------------------------------------------------------------------
-%	ABBREVIATIONS PAGE DESIGN
-%----------------------------------------------------------------------------------------
-
-\newcommand{\abbrevname}{List of Abbreviations}
-\providecaptionname{english,british,american}{\abbrevname}{List of Abbreviations}
-\providecaptionname{ngerman,german,austrian,naustrian}{\abbrevname}{Abk\"urzungsverzeichnis}
-\NewDocumentEnvironment{abbreviations}{ m }{%
-	\ifbool{nolistspace}{\begingroup\singlespacing}{}
-	\ifbool{listtoc}{\addchap{\abbrevname}}{\addchap*{\abbrevname}}
-	\begin{longtable}{#1}
-	}{%
-	\end{longtable}
-	\addtocounter{table}{-1} % Don't count this table as one of the document tables
-	\ifbool{nolistspace}{\endgroup}{}
-}
-
-%----------------------------------------------------------------------------------------
 %	ABSTRACT PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
@@ -376,8 +345,8 @@ KOMA-script documentation for details.}]{fancyhdr}
 
 \usepackage{xcolor}
 \colorlet{mdtRed}{red!50!black}
-\newcommand{\acknowledgementname}{Acknowledgements}
-\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish} {\acknowledgementname}{Acknowledgements} % Acknowledgement text for English countries
+\newcommand{\acknowledgementname}{Acknowledgments}
+\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish} {\acknowledgementname}{Acknowledgments} % Acknowledgement text for English countries
 \providecaptionname{german,ngerman,austrian,naustrian}{\acknowledgementname}{Danksagung} % Acknowledgement text for Germanic countries
 
 \ifbool{consistentlayout}{
@@ -391,7 +360,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 		\checktoopen
 		\tttypeout{\acknowledgementname}
 		\thispagestyle{plain}
-		\begin{center}{\huge\textit{\acknowledgementname}\par}\end{center}
+		\begin{center}{\bfseries\huge\underline{\acknowledgementname}\par}\end{center}
 	}
 	{
 		\vfil\vfil\null
@@ -402,71 +371,38 @@ KOMA-script documentation for details.}]{fancyhdr}
 %	DECLARATION PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
-\newcommand{\authorshipname}{Declaration of authorship}
 \providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\authorshipname}{CANDIDATE'S DECLARATION} 
-\ifbool{consistentlayout}{
-	\DeclareDocumentEnvironment{declaration}{}{
-		\addchap*{\authorshipname}
-		}{}%
-}{
-	\DeclareDocumentEnvironment{declaration}{}{
+\DeclareDocumentEnvironment{declaration}{}{
 		\checktoopen
 		\tttypeout{\authorshipname}
 		\thispagestyle{plain}
 		\null\vfil
-		{\noindent\Large\bfseries\centering\underline{\authorshipname}\par\vspace{10pt}}
-	}{}
-}
+		\begin{center}{\bfseries\Large\underline{\authorshipname}\par}\end{center}
+		%{\noindent\Large\bfseries\centering\underline{\authorshipname}\par\vspace{10pt}}
+}{}
 
 %----------------------------------------------------------------------------------------
 %	DEDICATION PAGE DESIGN
 %----------------------------------------------------------------------------------------
-
-\ifbool{consistentlayout}{
-	\DeclareDocumentCommand{\dedicatory}{
-		m O{\vspace*{.7\textheight} }  }{
-			\checktoopen\tttypeout{Dedicatory}
-			\markboth{}{}
-			#2
-			{\hfill\parbox{.4\textwidth}{\flushright#1\par}}
-		}
-}{
-	\newcommand\dedicatory[1]{
-		\checktoopen
-		\tttypeout{Dedicatory}
-		\null\vfil
-		\thispagestyle{plain}
-		\begin{center}{\Large\slshape #1}\end{center}
-		\vfil\null
+\newcommand{\constantsname}{Dedicatory}
+\DeclareDocumentCommand{\dedicatory}{
+	m O{\vspace*{.7\textheight} }  }{
+		\checktoopen\tttypeout{Dedicatory}
+		\markboth{}{}
+		#2
+		{\hfill\parbox{.5\textwidth}{\Huge\flushright#1\par}}
+		\vspace{0.5cm}
+		\hrule
 	}
-}
-
-
-%----------------------------------------------------------------------------------------
-%	PHYSICAL CONSTANTS PAGE DESIGN
-%----------------------------------------------------------------------------------------
-
-\newcommand{\constantsname}{Physical Constants}
-\providecaptionname{english,british,american}{\constantsname}{Physical Constants}
-
-\NewDocumentEnvironment{constants}{ m }{%
-	\ifbool{nolistspace}{\begingroup\singlespacing}{}
-	\ifbool{listtoc}{\addchap{\constantsname}}{\addchap*{\constantsname}}
-	\begin{longtable}{#1}
-	}{%
-	\end{longtable}
-	\addtocounter{table}{-1} % Don't count this table as one of the document tables
-	\ifbool{nolistspace}{\endgroup}{}
-}
 
 %----------------------------------------------------------------------------------------
 %	SYMBOLS PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
-\newcommand{\symbolsname}{List of Symbols}
-\providecaptionname{english,british,american}{\symbolsname}{List of Symbols}
+\newcommand{\symbolsname}{Nomenclature}
+\providecaptionname{english,british,american}{\symbolsname}{Nomenclature}
 
-\NewDocumentEnvironment{symbols}{ m }{%
+\NewDocumentEnvironment{Nomenclature}{ m }{%
 	\ifbool{nolistspace}{\begingroup\singlespacing}{}
 	\ifbool{listtoc}{\addchap{\symbolsname}}{\addchap*{\symbolsname}}
 	\begin{longtable}{#1}
