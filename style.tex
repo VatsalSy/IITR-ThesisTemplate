@@ -3,7 +3,7 @@
 	top=2.5cm, % Top margin
 	bottom=1.75cm, % Bottom margin
 	left=3.5cm, % left Margin -> binding allowance
-	right=1.5cm, % Right margin
+	right=2.25cm, % Right margin
 }
 \usepackage[T1]{fontenc} 
 \usepackage{times}
@@ -27,5 +27,7 @@
 \usepackage{colortbl}
 \RequirePackage{graphicx} % Required to include images
 \RequirePackage{caption} % Required for customising the captions
-\captionsetup{justification=centerlast,font=normal,labelfont=sc}
+\captionsetup{justification=justified,font=normal,labelfont=sc}
 \usepackage{csquotes}
+\usepackage[symbol]{footmisc}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}

@@ -14,9 +14,14 @@ dashed=false,
 maxcitenames=2,
 maxbibnames=99,
 natbib=true]{biblatex}
+\renewcommand*{\nameyeardelim}{\space}
 
 \renewbibmacro{in:}{%
   \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+\renewbibmacro{in:}{%
+  \ifentrytype{inproceedings}{}{\printtext{\bibstring{in}\intitlepunct}}}
+\renewcommand{\bibitemsep}{1.25em}
+\renewcommand{\bibhang}{0pt}
   
 \addbibresource{reference.bib}
 \addbibresource{referenceSelf.bib}
@@ -33,7 +38,7 @@ natbib=true]{biblatex}
 \subject{} %\subjectname
 \keywords{} %\keywordnames
 \university{{INDIAN INSTITUTE OF TECHNOLOGY ROORKEE}} %\univname
-\department{{DEPARTMENT OF MECHANICAL AND INDUSTRIAL ENGINEERING}} %\deptname
+\department{{DEPARTMENT OF MECHANICAL \& INDUSTRIAL ENGINEERING}} %\deptname
 \group{\href{}{}} %\groupname
 \faculty{{}{}} %\facname
 
@@ -42,6 +47,7 @@ natbib=true]{biblatex}
 \hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
 \hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
 }
+\setlength{\parindent}{0em}
 
 \begin{document}  
 \newcommand{\MarkerCircleRed}{\raisebox{0.5pt}{\tikz{\node[draw,scale=0.4,circle,fill=red!100!red](){};}}}
@@ -55,64 +61,58 @@ natbib=true]{biblatex}
 %----------------------------------------------------------------------------------------
 %	COVER PAGE
 %----------------------------------------------------------------------------------------
-\newgeometry{left=3.0cm,right=1.5cm,top=2.5cm,bottom=2.5cm}
 \include{formalities/cover_page}
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
-\newgeometry{left=3.0cm,right=1.5cm,top=2.5cm,bottom=2.5cm}
 \include{formalities/front_page}
 %----------------------------------------------------------------------------------------
 %	COPYRIGHT PAGE
 %----------------------------------------------------------------------------------------
-\newgeometry{left=3.0cm,right=1.5cm,top=2.5cm,bottom=2.5cm}
 \include{formalities/Copyright}
 %----------------------------------------------------------------------------------------
 %	DEDICATION PAGE
 %----------------------------------------------------------------------------------------
-\newgeometry{left=3.0cm,right=1.5cm,top=2.5cm,bottom=2.5cm}
 \include{formalities/Dedication}
 %----------------------------------------------------------------------------------------
 %	DECLARATION PAGE
 %----------------------------------------------------------------------------------------
-\newgeometry{left=3.0cm,right=1.5cm,top=2.5cm,bottom=2.5cm}
 \include{formalities/declaration}
 %----------------------------------------------------------------------------------------
 %	DECLARATION PAGE
 %----------------------------------------------------------------------------------------
-\newgeometry{left=3.0cm,right=1.5cm,top=2.5cm,bottom=2.5cm}
 \include{formalities/acknowledgement}
-\newgeometry{left=3.5cm,right=1.5cm,top=2.5cm,bottom=2.5cm}
 \include{formalities/Abstract}
 \include{formalities/Content}
-\end{document}
 \mainmatter % Begin numeric (1,2,3...) page numbering
 \pagestyle{thesis} % Return the page headers back to the "thesis" style
 \include{chapters/Introduction}
 \include{chapters/NumericalFramework}
 \include{chapters/CollisionOfJets}
+\include{chapters/BubbleEntrainment}
 \include{chapters/Conclusion}
-%\appendix
-%\include{Appendix}
-\addcontentsline{toc}{chapter}{Achievements till date}
-\nocite{*}
-\printbibliography[keyword=self1,title=\textbf{ACHIEVEMENTS TILL DATE}]
-\vspace{-8mm}
-\printbibliography[keyword=self2,heading=none]
-\vspace{-8mm}
-\printbibliography[keyword=self3,heading=none]
-\vspace{-8mm}
-\printbibliography[keyword=self4,heading=none]
-\vspace{-8mm}
-\printbibliography[keyword=self5,heading=none]
-\vspace{-8mm}
-\printbibliography[keyword=self6,heading=none]
-\vspace{-8mm}
-\printbibliography[keyword=self7,heading=none]
-\vspace{-8mm}
-\printbibliography[keyword=self8,heading=none]
-\cleardoublepage
+%% Refrence sections
 \addcontentsline{toc}{chapter}{References}
-\printbibliography[keyword=Notself,title=\textbf{REFERENCES}]
+\printbibliography[keyword=Notself,title={References}]
+\cleardoublepage
+\addcontentsline{toc}{chapter}{List of Publications}
+\nocite{*}
+\printbibliography[keyword=self1,title={\LARGE List of Publications}]
+%\vspace{-8mm}
+\printbibliography[keyword=self2,heading=none]
+%\vspace{-8mm}
+\printbibliography[keyword=self3,heading=none]
+%\vspace{-8mm}
+\printbibliography[keyword=self4,heading=none]
+%\vspace{-8mm}
+\printbibliography[keyword=self5,heading=none]
+%\vspace{-8mm}
+\printbibliography[keyword=self6,heading=none]
+%\vspace{-8mm}
+\printbibliography[keyword=self7,heading=none]
+%\vspace{-8mm}
+\printbibliography[keyword=self8,heading=none]
+\printbibliography[keyword=self9,heading=none]
+\printbibliography[keyword=self10,heading=none]
 \end{document}

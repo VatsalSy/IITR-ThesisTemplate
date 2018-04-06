@@ -38,6 +38,7 @@
 \ProvideDocumentCommand{\chapteralign}{}{\raggedright}
 \ProvideDocumentCommand{\chapterfont}{}{\Huge\bfseries}
 \ProvideDocumentCommand{\chapterprefixfont}{}{\LARGE\bfseries}
+
 \DeclareDocumentCommand{\@makechapterhead}{ m }{%
 	\abovechapterskip
 	{\parindent \z@ \chapteralign \normalfont
@@ -68,7 +69,7 @@
         \fi
         \interlinepenalty\@M
         \centering
-        \Huge \bfseries #1\par\pagebreak
+        \Huge \bfseries #1\par\vfill\pagebreak
         \vskip 21\p@
     }
     }
@@ -128,11 +129,9 @@
 }
 
 \patchcmd{\tableofcontents}{\MakeUppercase}{\MakeMarkcase}{}{}
-\patchcmd{\tableofcontents}{\MakeUppercase}{\MakeMarkcase}{}{}
-\patchcmd{\listoffigures}{\MakeUppercase}{\MakeMarkcase}{}{}
 \patchcmd{\listoffigures}{\MakeUppercase}{\MakeMarkcase}{}{}
 \patchcmd{\listoftables}{\MakeUppercase}{\MakeMarkcase}{}{}
-\patchcmd{\listoftables}{\MakeUppercase}{\MakeMarkcase}{}{}
+
 
 % If the option `nolistspacing' is given, the spacing in the different lists is reduced to single spacing. This option is only useful, if the spacing of the document has been changed to onehalfspacing or doublespacing.
 \ifbool{nolistspace}{
@@ -376,7 +375,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 		\checktoopen
 		\tttypeout{\authorshipname}
 		\thispagestyle{plain}
-		\null\vfil
+		%\null\vfil
 		\begin{center}{\bfseries\Large\underline{\authorshipname}\par}\end{center}
 		%{\noindent\Large\bfseries\centering\underline{\authorshipname}\par\vspace{10pt}}
 }{}
