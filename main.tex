@@ -1,9 +1,41 @@
 \documentclass[12pt,oneside,english,onehalfspacing,headsepline]{MastersDoctoralThesis}
-\include{style}
-\usepackage{etoolbox}
-\apptocmd{\thebibliography}{\csname phantomsection\endcsname\addcontentsline{toc}{chapter}{\bibname}}{}{}
-
+\geometry{
+	paper=a4paper,
+	top=2.5cm, % Top margin
+	bottom=1.75cm, % Bottom margin
+	left=3.5cm, % left Margin -> binding allowance
+	right=2.25cm, % Right margin
+}
 \usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{csquotes}
+\usepackage{times}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{gensymb}
+\usepackage{ifthen}
+\usepackage{lipsum}
+\usepackage{longtable}
+\setlength{\parindent}{4em}
+\makeatletter
+\newcommand{\removelatexerror}
+ {\let\@latex@error\@gobble}
+\makeatother
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usepackage{colortbl}
+\RequirePackage{graphicx} % Required to include images
+\RequirePackage{caption} % Required for customising the captions
+\captionsetup{justification=justified,font=normal,labelfont=sc}
+\usepackage[symbol]{footmisc}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\usepackage{etoolbox}
+\usepackage{xpatch}
+\apptocmd{\thebibliography}{\csname phantomsection\endcsname\addcontentsline{toc}{chapter}{\bibname}}{}{}
 \usepackage[url=false,
 backend=bibtex,
 style=authoryear-comp,
@@ -14,32 +46,30 @@ dashed=false,
 maxcitenames=2,
 maxbibnames=99,
 natbib=true]{biblatex}
-\renewcommand*{\nameyeardelim}{\space}
-
-\renewbibmacro{in:}{%
-  \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
-\renewbibmacro{in:}{%
-  \ifentrytype{inproceedings}{}{\printtext{\bibstring{in}\intitlepunct}}}
+\renewcommand*{\nameyeardelim}{\addnbspace}
+\renewbibmacro{in:}{}
 \renewcommand{\bibitemsep}{1.25em}
 \renewcommand{\bibhang}{0pt}
-  
 \addbibresource{reference.bib}
 \addbibresource{referenceSelf.bib}
-
 \DeclareNameAlias{author}{last-first}
+\let\oldcitet=\citet
+\let\oldcitep=\citep 
+\renewcommand{\citet}[1]{\textcolor[rgb]{0,0,1}{\oldcitet{#1}}}
+\renewcommand{\citep}[1]{\textcolor[rgb]{0,0,1}{\oldcitep{#1}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \thesistitle{UNDERSTANDING OF MUTUAL INTERACTIONS BETWEEN LIQUID JETS: ENTRAINMENT AND SHEET FORMATION} %\ttitle
 \supervisor{Dr. ARUP KUMAR DAS} %\supname
 \examiner{} %\examname
-\IDDdegree{MASTER OF TECHNOLOGY} %\degreename
+\IDDdegree{INTEGRATED DUAL DEGREE} %\degreename
 \author{VATSAL SANJAY} %\authorname
 \addresses{} %\addressname
 \subject{} %\subjectname
 \keywords{} %\keywordnames
 \university{{INDIAN INSTITUTE OF TECHNOLOGY ROORKEE}} %\univname
 \department{{DEPARTMENT OF MECHANICAL \& INDUSTRIAL ENGINEERING}} %\deptname
-\group{\href{}{}} %\groupname
+\group{} %\groupname
 \faculty{{}{}} %\facname
 
 \AtBeginDocument{
@@ -49,7 +79,15 @@ natbib=true]{biblatex}
 }
 \setlength{\parindent}{0em}
 
+\makeatletter
+\renewcommand\@dotsep{200}
+\makeatother
+\renewcommand*{\finalnamedelim}{%
+   \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
+   \addspace\&\space}
+
 \begin{document}  
+
 \newcommand{\MarkerCircleRed}{\raisebox{0.5pt}{\tikz{\node[draw,scale=0.4,circle,fill=red!100!red](){};}}}
 \newcommand{\MarkerSquareRed}{\raisebox{0.5pt}{\tikz{\node[draw,scale=0.4,regular polygon, regular polygon sides=4,fill=black!20!red](){};}}}
 \newcommand{\MarkerDiamondBlack}{\raisebox{0pt}{\tikz{\node[draw,scale=0.4,diamond,fill=black!100!](){};}}}
@@ -59,60 +97,56 @@ natbib=true]{biblatex}
 \frontmatter 
 \pagestyle{plain}
 %----------------------------------------------------------------------------------------
-%	COVER PAGE
-%----------------------------------------------------------------------------------------
-\include{formalities/cover_page}
-%----------------------------------------------------------------------------------------
-%----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
+%\include{formalities/cover_page}
 \include{formalities/front_page}
 %----------------------------------------------------------------------------------------
 %	COPYRIGHT PAGE
 %----------------------------------------------------------------------------------------
 \include{formalities/Copyright}
 %----------------------------------------------------------------------------------------
-%	DEDICATION PAGE
-%----------------------------------------------------------------------------------------
-\include{formalities/Dedication}
 %----------------------------------------------------------------------------------------
 %	DECLARATION PAGE
 %----------------------------------------------------------------------------------------
 \include{formalities/declaration}
 %----------------------------------------------------------------------------------------
-%	DECLARATION PAGE
+%	DEDICATION PAGE
 %----------------------------------------------------------------------------------------
+\include{formalities/Dedication}
+%	ACKNOWLEDGEMENT PAGE
+%----------------------------------------------------------------------------------------
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
 \include{formalities/acknowledgement}
 \include{formalities/Abstract}
 \include{formalities/Content}
 \mainmatter % Begin numeric (1,2,3...) page numbering
-\pagestyle{thesis} % Return the page headers back to the "thesis" style
 \include{chapters/Introduction}
 \include{chapters/NumericalFramework}
 \include{chapters/CollisionOfJets}
 \include{chapters/BubbleEntrainment}
 \include{chapters/Conclusion}
 %% Refrence sections
-\addcontentsline{toc}{chapter}{References}
-\printbibliography[keyword=Notself,title={References}]
-\cleardoublepage
-\addcontentsline{toc}{chapter}{List of Publications}
 \nocite{*}
-\printbibliography[keyword=self1,title={\LARGE List of Publications}]
-%\vspace{-8mm}
+\ohead{\textit{References}}
+\addcontentsline{toc}{chapter}{References}
+\printbibliography[keyword=Notself,title={Refrences}]
+\cleardoublepage
+\ohead{\textit{Publications}}
+\addcontentsline{toc}{chapter}{Publications}
+\chapter*{Publications}
+\section*{Journal}
+\subsection*{Published}
+\printbibliography[keyword=self1,heading=none]
 \printbibliography[keyword=self2,heading=none]
-%\vspace{-8mm}
-\printbibliography[keyword=self3,heading=none]
-%\vspace{-8mm}
-\printbibliography[keyword=self4,heading=none]
-%\vspace{-8mm}
-\printbibliography[keyword=self5,heading=none]
-%\vspace{-8mm}
-\printbibliography[keyword=self6,heading=none]
-%\vspace{-8mm}
-\printbibliography[keyword=self7,heading=none]
-%\vspace{-8mm}
-\printbibliography[keyword=self8,heading=none]
+\subsection*{In Press / Under Review}
 \printbibliography[keyword=self9,heading=none]
 \printbibliography[keyword=self10,heading=none]
+\section*{Conference}
+\printbibliography[keyword=self3,heading=none]
+\printbibliography[keyword=self4,heading=none]
+\printbibliography[keyword=self5,heading=none]
+\printbibliography[keyword=self6,heading=none]
+\printbibliography[keyword=self7,heading=none]
+\printbibliography[keyword=self8,heading=none]
 \end{document}

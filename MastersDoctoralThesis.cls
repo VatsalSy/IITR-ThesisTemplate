@@ -139,19 +139,19 @@
 		\@starttoc{lof}
 	}{%
 		\begingroup%
-		\singlespace\@starttoc{lof}\endgroup%
+		\onehalfspace\@starttoc{lof}\endgroup%
 	}{}{}%
 	\patchcmd{\listoftables}{%
 		\@starttoc{lot}
 	}{%
 		\begingroup%
-		\singlespace\@starttoc{lot}\endgroup%
+		\onehalfspace\@starttoc{lot}\endgroup%
 	}{}{}%
 	\patchcmd{\tableofcontents}{%
 		\@starttoc{toc}
 	}{%
 		\begingroup%
-		\singlespace\@starttoc{toc}\endgroup%
+		\onehalfspace\@starttoc{toc}\endgroup%
 	}{}{}%
 }{}
 
@@ -241,14 +241,17 @@
 %----------------------------------------------------------------------------------------
 
 \RequirePackage[markcase=used]{scrlayer-scrpage}
+
 \providepairofpagestyles{thesisSimple}{%
 	\clearpairofpagestyles%
 	\automark[chapter]{chapter}
-	\ihead{\headmark}% Inner header
-	\ohead[\pagemark]{\pagemark}% Outer header
+	\ihead{}% Inner header
+	\ohead{\headmark}% Outer header
+	\ifoot{}% Inner footer
+	\ofoot{}% Inner footer
+	\cfoot[\pagemark]{\pagemark}% Outer footer
 }
-\ifoot{}% Inner footer
-\ofoot{}% Outer footer
+
 \pagestyle{thesisSimple}
 \providepairofpagestyles[thesisSimple]{thesis}{%
 	\automark*[section]{}%
@@ -283,11 +286,8 @@ KOMA-script documentation for details.}]{fancyhdr}
 %	ABSTRACT PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
-\DeclareDocumentCommand{\abstractauthorfont}{}{}
-\DeclareDocumentCommand{\abstracttitlefont}{}{}
-\newcommand{\byname}{by}
 \newcommand{\abstractname}{\textbf{Abstract}}
-\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\byname}{by}
+
 \ifbool{consistentlayout}{
 	\DeclareDocumentEnvironment{abstract}{ O{} }{%
 		\addchap*{\abstractname}%
@@ -298,14 +298,14 @@ KOMA-script documentation for details.}]{fancyhdr}
 	}%
 	{}%end alt-abstract
 }{%
-	\DeclareDocumentEnvironment{abstract}{ O{\null} }{
+	\DeclareDocumentEnvironment{abstract}{ O{} }{
 		\checktoopen
 		\tttypeout{\abstractname}
 		#1%added to be able to have abstract more than one page long
 		\thispagestyle{plain}
 		\begin{center}
-			{\huge\textbf{\underline{\abstractname}} \par}
-			\bigskip
+			{\huge\textbf{\underline{\abstractname}}\par}
+			%\bigskip
 		\end{center}
 	}
 	{
@@ -313,6 +313,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 	}
 }
 
+%% name of department and other things
 \DeclareDocumentEnvironment{extraAbstract}{ O{\null\vfill} }{
 	\checktoopen
 	\tttypeout{\abstractname}
@@ -344,9 +345,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 
 \usepackage{xcolor}
 \colorlet{mdtRed}{red!50!black}
-\newcommand{\acknowledgementname}{Acknowledgments}
-\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish} {\acknowledgementname}{Acknowledgments} % Acknowledgement text for English countries
-\providecaptionname{german,ngerman,austrian,naustrian}{\acknowledgementname}{Danksagung} % Acknowledgement text for Germanic countries
+\newcommand{\acknowledgementname}{Acknowledgment}
 
 \ifbool{consistentlayout}{
 	\DeclareDocumentEnvironment{acknowledgements}{}{%
@@ -376,7 +375,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 		\tttypeout{\authorshipname}
 		\thispagestyle{plain}
 		%\null\vfil
-		\begin{center}{\bfseries\Large\underline{\authorshipname}\par}\end{center}
+		\begin{center}{\bfseries\large\underline{\authorshipname}\par}\end{center}
 		%{\noindent\Large\bfseries\centering\underline{\authorshipname}\par\vspace{10pt}}
 }{}
 
@@ -402,7 +401,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 \providecaptionname{english,british,american}{\symbolsname}{Nomenclature}
 
 \NewDocumentEnvironment{Nomenclature}{ m }{%
-	\ifbool{nolistspace}{\begingroup\singlespacing}{}
+	\ifbool{nolistspace}{\begingroup\onehalfspacing}{}
 	\ifbool{listtoc}{\addchap{\symbolsname}}{\addchap*{\symbolsname}}
 	\begin{longtable}{#1}
 	}{%
@@ -420,7 +419,7 @@ bookmarksopen=true,
 bookmarksopenlevel=0,
 hypertexnames=false,
 colorlinks=true, % Set to false to disable coloring links
-citecolor=magenta, % The color of citations
+citecolor=blue, % The color of citations
 linkcolor=black, % The color of references to document elements (sections, figures, etc)
 urlcolor=mdtRed, % The color of hyperlinks (URLs)
 pdfstartview={FitV},

@@ -1,18 +1,17 @@
 \chapter{Numerical Framework}
-\section{Introduction}
-The collision of liquid jets has been studied in three-dimensional finite volume framework. Open source freeware, transient, multi-fluid, Navier-Stokes solver Gerris is used for the current study. Developed by \cite{Popinet2003,popinet2009}, Gerris has provided a stable and accurate platform for surface tension inclusive flows. It has been successful used frequently by researchers, such as \cite{chen2013high,kumar2016physical,kumar2017bending,kumar2017air}, to delve into similar problems in interfacial flows involving liquid sheets, jet and thin features like ligaments and films to capture intricate flow details and investigate the process. In this chapter, the detailed numerical framework adopted by Gerris is given. First, the governing equations and the corresponding discretization schemes are discussed followed by an illustration of the adaptive mesh refinement and grid independence study. At the end, a brief description about the work to validate the numerical model is presented.   
+In the present work, a three-dimensional finite volume framework is employed for numerical simulations. An open source freeware, transient, multi-fluid, Navier-Stokes solver Gerris is used. Developed by \citet{Popinet2003,popinet2009}, Gerris has provided a stable and accurate platform for surface tension inclusive flows. It has been successful used frequently by researchers, such as \citet{chen2013high,kumar2016physical,kumar2017bending,kumar2017air}, to delve into similar problems in interfacial flows involving liquid sheets \citep{fuster2013instability,zhang2017effects}, jet \citep{yang2017simulation,xie2017instability} and thin features like ligaments and films \citep{agbaglah2015drop,walls2015jet} to capture intricate flow details and investigate the process. In this chapter, the detailed numerical framework adopted by Gerris is given. First, the governing equations are presented followed with a discussion on the discretization schemes along with the step-by-step sequence of the solution procedure implemented.
 \section{Governing equations}
 Conventional mass and momentum conservation equations for incompressible flow have been solved in presence of the surface tension and gravitational force. Equation~\ref{Equation::massConservation} contains the mass conservation equation for incompressible flow, which simply states that the velocity field ($V_i = V_1\hat{i} + V_2\hat{j} + V_3\hat{k}$) must be divergence free. 
 \begin{equation}\label{Equation::massConservation}
 \frac{\partial V_i}{\partial x_i} = 0
 \end{equation}
-The momentum equation for the incompressible Newtonian fluids that is solved for all the spatial coordinates can be summarized as given in equation~\ref{Equation::NS}. In the equation, the forces applied on the control volume chosen consist of the pressure in form of its gradient $\left(\frac{\partial P}{\partial x_i}\right)$, the volume specific body force due to gravitation $\left(\rho g_i\right)$, the surface forces due to shear stress ($2\mu D_{i,k}$, where $\mu$ represents the coefficient of dynamic viscosity and $D_{i,k} is the deformation tensor$) and the interface specific surface tension force ($\sigma \kappa$, where $\sigma$ is the surface tension coefficient and $\kappa$ denotes the curvature of the interface). 
+The momentum equation for the incompressible Newtonian fluids that is solved for all the spatial coordinates can be summarized as given in equation~\ref{Equation::NS}. In the equation, the forces applied on the control volume chosen consist of the pressure in form of its gradient $\left(\frac{\partial P}{\partial x_i}\right)$, the volume specific body force due to gravitation $\left(\rho g_i\right)$, the surface forces due to shear stress ($2\mu D_{ik}$, where $\mu$ represents the coefficient of dynamic viscosity and $D_{ik}$ is the deformation tensor) and the interface specific surface tension force ($\sigma \kappa$, where $\sigma$ is the surface tension coefficient and $\kappa$ denotes the curvature of the interface). 
 \begin{equation}\label{Equation::NS}
-\rho\left(\frac{\partial V_i}{\partial t} + V_k\frac{\partial V_i}{\partial x_k}\right) = -\frac{\partial P}{\partial x_i} + \frac{\partial(2\mu D_{i,k})}{\partial x_k} + \sigma\kappa\delta_sm_i + \rho g_i
+\rho\left(\frac{\partial V_i}{\partial t} + V_k\frac{\partial V_i}{\partial x_k}\right) = -\frac{\partial P}{\partial x_i} + \frac{\partial(2\mu D_{ik})}{\partial x_k} + \sigma\kappa\delta_sm_i + \rho g_i
 \end{equation}
-Moreover, the surface tension term is multiplied with the Dirac distribution function ($\delta_s$) to ensure that the force due to surface tension acts only at the interface having a normal vector $m_i$. Further, the deformation tensor $D_{i,k}$ is defined using the symmetric part of the velocity field gradient as given in equation~\ref{Equation::deformation}.
+Moreover, the surface tension term is multiplied with the Dirac distribution function ($\delta_s$) to ensure that the force due to surface tension acts only at the interface having a normal vector $m_i$. Further, the deformation tensor $D_{ik}$ is defined using the symmetric part of the velocity field gradient as given in equation~\ref{Equation::deformation}.
 \begin{equation}\label{Equation::deformation}
-D_{i,k} = \frac{1}{2}\left(\frac{\partial V_i}{\partial x_k} + \frac{\partial V_k}{\partial x_i}\right)
+D_{ik} = \frac{1}{2}\left(\frac{\partial V_i}{\partial x_k} + \frac{\partial V_k}{\partial x_i}\right)
 \end{equation}
 The equation~\ref{Equation::NS} implicitly takes care of the mechanical energy. Moreover, the temperature variations are too small to affect the phenomenon being investigated and therefore, no thermal energy equation is considered. The interface tracking is done using the Volume Of Fluid (VOF), a front capturing approach involving volume fraction of liquid, defined as $\Psi(x_i, t)$, at the spatial and temporal instance of $x_i$ and $t$ respectively. The density and viscosity for the study can be described using equation~\ref{Equation::general} in terms of a generic property $A$.
 \begin{equation} \label{Equation::general}
@@ -22,26 +21,84 @@ The VOF approach is implemented in a two-step process of interface reconstructio
 \begin{equation} \label{Equation::vof}
 \frac{\partial \Psi}{\partial t} + \frac{\partial(\Psi V_i)}{\partial X_i} = 0
 \end{equation}
-Gerris uses second-order accurate time discretization of momentum and continuity equations with time splitting algorithm as proposed by \cite{Chorin1968}, whereby an unconditionally stable corrector predictor time marching approach is adopted. A multigrid solver is used for the solution of the resulting pressure-velocity coupled Laplace equation. The advection term of the momentum equation $\left(V_k\frac{\partial V_i}{\partial X_k}\right)$ is estimated using the Bell-Colella-Glaz second-order unsplit upwind scheme \citep{bell1989second}, which requires the restriction to be set up on the time step. Following \cite{popinet2009}, time step has been determined to satisfy Courant-Friedrich-Lewy (CFL) stability criteria of less than unity. The details of solution procedure can be found in the works of \cite{Popinet2003,popinet2009}. In the next section, we have looked at the different process parameters which are relevant to this study followed by a grid independence study of the results.\\
- The density and viscosity field for the study can be defined as:
-\begin{equation} \label{Equation::general}
-A (\bar{\alpha}) = \bar{\alpha}A_1 + (1-\bar{\alpha})A_2 \: \: \:  \forall  \: A \in \{\rho, \mu\}
+\section{Solution sequence of governing equations}
+In this section, a brief discussion about the solution scheme is presented. The details of this procedure can be found in the work of \citet{Popinet2003,popinet2009}. 
+\subsection{Effective discretized governing equations}
+\begin{eqnarray}\label{Equation::Dis1}
+\rho^{n+1/2}\left(\frac{V_i^{n+1} - V_i^{n}}{\delta t} + \left(V_k\frac{\partial V_i}{\partial x_k}\right)^{n+1/2}\right) = -\left(\frac{\partial P}{\partial x_i}\right)^{n+1/2} +\nonumber\\ \frac{\partial}{\partial x_k}\left(\mu^{n+1/2}\left(D_{ik}^{n} + D_{ik}^{n+1}\right)\right) + (\sigma\kappa\delta_sm_i)^{n+1/2} + \rho g_i
+\end{eqnarray}
+\begin{equation}\label{Equation::Dis2}
+\frac{\Psi^{n+1/2} - \Psi^{n-1/2}}{\delta t} + \frac{\partial(\Psi^n V_i^n)}{\partial X_i} = 0
 \end{equation}
-In the Equation~\ref{Equation::general}, $\bar{\alpha}$ is calculated through bilinear interpolation of $\alpha(x_i,t)$ from cell centered values using spatial filtering. Mass conservation across the interface is implemented following Equation~\ref{Equation::mass}. 
-\begin{equation} \label{Equation::mass}
-\frac{\partial V_i}{\partial x_i} = 0
+\begin{equation}\label{Equation::Dis3}
+\frac{\partial V_i}{\partial x_i}^n = 0
 \end{equation}
- To tackle individual phases, a Volume of Fluid tracer advection has been solved, as described in Equation~\ref{Equation::vof}. 
-\begin{equation} \label{Equation::vof}
-\frac{\partial \alpha}{\partial t} + \frac{\partial(\alpha V_i)}{\partial x_i} = 0
+Equations~\ref{Equation::Dis1} to~\ref{Equation::Dis3} consist of the effective discretization employed in the Gerris. It uses second-order accurate time discretization of momentum and continuity equations with time splitting algorithm as proposed by \citet{Chorin1968}, whereby an unconditionally stable corrector predictor time marching approach is adopted. A multigrid solver is used for the solution of the resulting pressure-velocity coupled Poisson equation. The advection term of the momentum equation $\left(V_k\frac{\partial V_i}{\partial X_k}\right)$ is estimated using the Bell-Colella-Glaz second-order unsplit upwind scheme \citep{bell1989second}, which requires the restriction to be set up on the time step. Following \citet{popinet2009}, time step has been determined to satisfy Courant-Friedrich-Lewy (CFL) stability criteria of less than unity. 
+\subsubsection{Hodge decomposition of velocity field}
+Equation~\ref{Equation::Dis1} involves solution of both velocity and pressure fields. Further, as seen from equation~\ref{Equation::Dis1} and~\ref{Equation::Dis2}, a couple of interesting things can be realized. Firstly, solution to both velocity and pressure field is required. Since, the flow is assumed incompressible, the only instance of pressure comes in equation~\ref{Equation::Dis1}. This is done by making the use of Hodge decomposition, according to which, the velocity field can be written as a sum of a divergence free, and an irrotational component as given in equation~\ref{Equation::Hod1}. This also helps in the time-splitting projection method for solution of Navier-Stokes equations \citep{Chorin1968}.
+\begin{equation}\label{Equation::Hod1}
+V_i^* = V_i + \frac{\partial\psi}{\partial x_i}\:\:\forall\:\:\epsilon_{ijk}\frac{\partial}{\partial x_j}\left(\frac{\partial\psi}{\partial x_k}\right) = 0
 \end{equation}
-The temperature variations are assumed to be too small to affect the investigated phenomenon. As a result, no thermodynamic conservation equation is solved. However, the incompressible Navier-Stokes equations are solved for all three spatial coordinates. Equation~\ref{Equation::NS} has the representation for the same in Cartesian tensor notation. 
-\begin{equation} \label{Equation::NS}
-\rho\left( \frac{\partial V_i}{\partial t} + V_j\frac{\partial V_i}{\partial x_j} \right) = -\frac{\partial p}{\partial x_i} + \frac{\partial (2\mu D_{ij})}{\partial x_j} + \sigma \kappa \delta_sm_i + \rho g_i
+In the control volume, the velocity field needs to be divergence free. On using this fact, the above equation is modified as equation~\ref{Equation::Hod2} \citep{popinet2009}. 
+\begin{equation}\label{Equation::Hod2}
+\frac{\partial V_i}{\partial x_i}^* = \frac{\partial^2\psi}{\partial x_i^2}
 \end{equation}
-$\frac{\partial p}{\partial x_i}$ refers to the pressure gradient for the flow and $\rho g_i$ is the gravitational force applied at a given coordinate in space and time. Moreover, $\kappa$, $\sigma$ and $m_i$ are the curvature of the interface, surface tension force per unit length and the interface normal vector respectively. The multiplication of Dirac distribution function with the surface tension term is to ensure that this force is concentrated at the surface of the two phases. Further, the deformation tensor $D_{ij}$ is defined in Equation~\ref{Equation::deformation}.
-\begin{equation} \label{Equation::deformation}
-D_{ij} = \frac{1}{2}\left(\frac{\partial V_i}{\partial x_j} + \frac{\partial V_j}{\partial x_i}\right)
+\subsubsection{Calculation of surface tension force}\label{Section::sigma}
+An important feature in the governing equations of two-phase flow processes is the inclusion of interfacial focused surface tension. The influence of this surface force is included as a source term in equation~\ref{Equation::NS}. The Dirac distribution tensor, $\delta_s$ ensures that the effect is only accounted for the interface between two fluids. Applying the \citet{brackbill1992continuum} approximation of surface tension, one can obtain:
+\begin{equation}\label{Equation::sigma1}
+\sigma\kappa\delta_sm_i \approx \sigma\kappa\frac{\partial\Psi}{\partial x_i} 
 \end{equation}
-Second order accurate time discretization of momentum and continuity equations are carried out with time splitting algorithm as proposed by Chorin \cite{Chorin1968}. Gerris decides time step based on Courant-Friedrichs-Lewy (CFL) stability criteria (CFL < 1) employed for Bell-Colella-Glaz second-order unsplit upwind scheme for the estimation of the velocity advection term, $\left(V_j\frac{\partial V_i}{\partial x_j} \right)$ \cite{popinet2009accurate}. However, a maximum limit of 5 X $10^{-4}$ seconds is set to keep the solution in bounds. \\
+The curvature term associated with the above equation can be given by:
+\begin{equation}\label{Equation::sigma2}
+\kappa = \frac{\partial m_i}{\partial x_i}\:\:\forall\:\:m_i = \frac{\frac{\partial\Psi}{\partial x_i}}{\sqrt{\frac{\partial\Psi}{\partial x_i}\frac{\partial\Psi}{\partial x_i}}}
+\end{equation}
+Calculation of the curvature, $\kappa$ forms an integral part of the two-phase flow solver. \citet{popinet2009} describes the approach adopted in Gerris.
+\subsection{Temporal discretization of governing equations}
+A second order accurate, unconditionally stable predictor-corrector (projection) scheme is used in Gerris for solution methodology \citep{Chorin1968}. Here, a step-by-step sequence of the solution procedure, at each time step, is provided.
+\subsubsection{Calculation of projected velocity field, $V_i^*$}
+\begin{eqnarray}\label{Equation::sol1}
+\rho^{n+1/2}\left(\frac{V_i^* - V_i^{n}}{\delta t} + \left(V_k\frac{\partial V_i}{\partial x_k}\right)^{n+1/2}\right) = \frac{\partial}{\partial x_k}\left(\mu^{n+1/2}\left(D_{ik}^{n} + D_{ik}^*\right)\right)\nonumber\\ + (\sigma\kappa\delta_sm_i)^{n+1/2} + \rho g_i
+\end{eqnarray}
+At first, a projected velocity field, $V_i^*$ is calculated using the above equation. It is interesting to note the presence of fractional time step variables, such as density field $\left(\rho^{n+1/2}\right)$, advection term $\left(V_k\frac{\partial V_i}{\partial x_k}\right)^{n+1/2}$, viscosity $\left(\mu^{n+1/2}\right)$ and surface tension force $(\sigma\kappa\delta_sm_i)^{n+1/2}$ in equation~\ref{Equation::sol1}. Out of these, the advection term is approximated using method proposed by \citet{bell1989second} and surface tension is modeled using proposition of \citet{brackbill1992continuum} described in Section~\ref{Section::sigma}. Moreover, the properties, like density and viscosity, are modeled using the solution obtained from equations~\ref{Equation::Dis2} and~\ref{Equation::vof}. With these approximations, the equation~\ref{Equation::sol1} can be used to obtain the projected velocity field, $V_i^*$. Furthermore, it must be noted that the effect of pressure is not considered in this calculation and will be used later on to find divergence free velocity field. 
+\subsubsection{Pressure - Poisson equation}
+Including the effect of pressure in the velocity field, the following equation for momentum balance is obtained:
+\begin{equation}\label{Equation::sol2}
+V_i^{n+1} = V_i^* - \frac{\delta t}{\rho^{n+1/2}}\left(\frac{\partial P}{\partial x_i}\right)^{n+1/2}
+\end{equation}
+Here, $V_i^{n+1}$ must represent the divergence free velocity field in order to satisfy the continuity equation, given in temporal form as:
+\begin{equation}\label{Equation::sol3}
+\frac{\partial V_i}{\partial x_i}^{n+1} = 0
+\end{equation}
+Using, equations~\ref{Equation::sol2} and~\ref{Equation::sol3}, the following pressure - velocity Poisson equation is obtained:
+\begin{equation}\label{Equation::sol4}
+\frac{\partial}{\partial x_i}\left(\frac{\delta t}{\rho^{n+1/2}}\left(\frac{\partial P}{\partial x_i}\right)^{n+1/2}\right) = \frac{\partial V_i}{\partial x_i}^*
+\end{equation}
+This Poisson equation is solved using iterative Gauss - Seidel iterative method with a relaxation operator \citep{Popinet2003}. The solution is carried out on a quadtree (two-dimensional) or an octree (three-dimensional) based multilevel solver. The outcome of this solution step is to obtain a pressure field at fractional time step.
+\subsubsection{Pressure - velocity coupling}
+Once projected velocity ($V_i^*$) and pressure ($P^{n+1/2}$) fields are known, the velocity field can be calculated using equation~\ref{Equation::sol2}. However, Gerris uses collocated grid which is known to suffer from lack of pressure - velocity coupling. This may lead to pressure oscillations. In order to solve this issue, following corrections in the velocity field are implemented:
+\begin{equation}\label{Equation::sol5}
+\frac{\partial V_i}{\partial x_i}^* = \frac{1}{\Delta}\sum_f\delta_{ij}V_i^{f,*}m_j
+\end{equation}
+\begin{equation}\label{Equation::sol6}
+V_i^{f,n+1} = V_i^{f,*} - \frac{\delta t}{\rho^{n+1/2}}\left(\frac{\partial^f P}{\partial x_i}\right)^{n+1/2}
+\end{equation}
+\begin{equation}\label{Equation::sol7}
+V_i^{c,n+1} = V_i^{c,*} - \left\langle\frac{\delta t}{\rho^{n+1/2}}\left(\frac{\partial^f P}{\partial x_i}\right)^{n+1/2}\right\rangle^c
+\end{equation}
+Equation~\ref{Equation::sol5} is used to find out the face centered projections of the velocity field $\left(V_i^{f,*}\right)$ using linear interpolations. As mentioned earlier, the pressure field is calculated from equation~\ref{Equation::sol4}. Using these two fields, the face centered $\left(V_i^{f,n+1}\right)$ and cell centered $\left(V_i^{c,n+1}\right)$ velocity fields are corrected. The face centered velocity, $V_i^{f,n+1}$, is used in calculation of the flux across the faces of individual cells. This is also used in estimation of the advection term as suggested by \citet{bell1989second}. Additionally, it must be noted that the operator $\left\langle\right\rangle^c$ represents averaging across all the faces. 
+\subsubsection{Surface tension correction}
+In Section~\ref{Section::sigma}, the \citet{brackbill1992continuum} approximation is elucidated. Following the momentum equation formulations of \citet{renardy2002prost,francois2006balanced} along with the above approximation, equation~\ref{Equation::sigma3} is obtained.  
+\begin{equation}\label{Equation::sigma3}
+-\left(\frac{\partial P}{\partial x_i}\right)^{n+1/2} + \sigma\kappa\frac{\partial\Psi}{\partial x_i}^{n+1/2} = 0
+\end{equation}
+An equilibrium discretized solution for the above equation is given by $P^{n+1/2} = \sigma\kappa\Psi^{n+1/2} + C$, where $C$ is a constant. Using this and employing implementations identical to equations~\ref{Equation::sol6} and~\ref{Equation::sol7}, the predicted face centered $\left(V_i^{f,*}\right)$ and cell centered $\left(V_i^{c,*}\right)$ velocities are corrected by using following equations: 
+\begin{equation}\label{Equation::sigma4}
+V_i^{f,*} \leftarrow V_i^{f,*} + \frac{\delta t\sigma\kappa^{f,n+1/2}}{\rho\Psi^{f,n+1/2}}\frac{\partial^f}{\partial x_i}(\Psi)^{n+1/2}
+\end{equation}
+\begin{equation}\label{Equation::sigma5}
+V_i^{c,*} \leftarrow V_i^{c,*} + \left\langle\frac{\delta t\sigma\kappa^{f,n+1/2}}{\rho\Psi^{f,n+1/2}}\frac{\partial^f}{\partial x_i}(\Psi)^{n+1/2}\right\rangle^c
+\end{equation}
+Another important feature of the VOF methodology for interfacial flow, implemented by Gerris, is the reconstruction of the interface using Piecewise Linear Interface Construction (PLIC). This is needed for the precise treatment of the interface dynamics.
+\section{Summary}
+This section serves as a precursor to the problem specific numerical model setups provided in the individual chapters. A detailed description of the governing equations is provided at the beginning, followed by a solution sequence of the discretized system of equations. Numerical schemes associated with the various components of momentum equation is mentioned along with the step-by-step solution procedure. Several important corrections, related to solution of checker-board problem and surface tension calculations, germane to the two-phase flow solutions, are also described. Further details of the solution methodology and implementation can be found in work of \citet{Popinet2003,popinet2009}.
 
