@@ -304,7 +304,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 		#1%added to be able to have abstract more than one page long
 		\thispagestyle{plain}
 		\begin{center}
-			{\huge\textbf{\underline{\abstractname}}\par}
+			{\huge\textbf{{\abstractname}}\par}
 			%\bigskip
 		\end{center}
 	}
@@ -345,26 +345,6 @@ KOMA-script documentation for details.}]{fancyhdr}
 
 \usepackage{xcolor}
 \colorlet{mdtRed}{red!50!black}
-\newcommand{\acknowledgementname}{Acknowledgment}
-
-\ifbool{consistentlayout}{
-	\DeclareDocumentEnvironment{acknowledgements}{}{%
-		\tttypeout{\acknowledgementname}
-		\addchap*{\acknowledgementname}
-	}
-}
-{
-	\DeclareDocumentEnvironment{acknowledgements}{}{%
-		\checktoopen
-		\tttypeout{\acknowledgementname}
-		\thispagestyle{plain}
-		\begin{center}{\bfseries\huge\underline{\acknowledgementname}\par}\end{center}
-	}
-	{
-		\vfil\vfil\null
-	}
-}
-
 %----------------------------------------------------------------------------------------
 %	DECLARATION PAGE DESIGN
 %----------------------------------------------------------------------------------------
@@ -375,7 +355,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 		\tttypeout{\authorshipname}
 		\thispagestyle{plain}
 		%\null\vfil
-		\begin{center}{\bfseries\large\underline{\authorshipname}\par}\end{center}
+		\begin{center}{\bfseries\large{\authorshipname}\par}\end{center}
 		%{\noindent\Large\bfseries\centering\underline{\authorshipname}\par\vspace{10pt}}
 }{}
 
@@ -420,7 +400,7 @@ bookmarksopenlevel=0,
 hypertexnames=false,
 colorlinks=true, % Set to false to disable coloring links
 citecolor=blue, % The color of citations
-linkcolor=black, % The color of references to document elements (sections, figures, etc)
+linkcolor=magenta, % The color of references to document elements (sections, figures, etc)
 urlcolor=mdtRed, % The color of hyperlinks (URLs)
 pdfstartview={FitV},
 unicode,
