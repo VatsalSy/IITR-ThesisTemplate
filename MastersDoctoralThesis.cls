@@ -170,11 +170,10 @@
 %	DEFINE CUSTOM THESIS INFORMATION COMMANDS
 %----------------------------------------------------------------------------------------
 
-\DeclareDocumentCommand{\thesistitle} { o m }{
-	\IfBooleanTF{#1} {\DeclareDocumentCommand{\shorttitle}{ }{#1}
-	{\DeclareDocumentCommand{\shorttitle}{}{#2}}}
-	\DeclareDocumentCommand{\@title}{ }{#2}
-	\DeclareDocumentCommand{\ttitle}{ }{#2}
+\NewDocumentCommand{\thesistitle} { o m }{%
+	\IfValueTF{#1}{\def\shorttitle{#1}}{\def\shorttitle{#2}}%
+	\def\@title{#2}%
+	\def\ttitle{#2}%
 }
 \DeclareDocumentCommand { \author     } { m } { \DeclareDocumentCommand    { \authorname } { } {#1}
 \DeclareDocumentCommand { \@author    } {   } {#1}   }
